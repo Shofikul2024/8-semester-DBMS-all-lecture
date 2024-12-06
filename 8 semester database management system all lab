@@ -1,0 +1,305 @@
+//first lab simple table
+
+ CREATE TABLE mytable (
+    roll INT,
+    name VARCHAR(30)
+);
+
+INSERT INTO mytable (roll, name) VALUES (3, 'Md. Sourov');
+INSERT INTO mytable (roll, name) VALUES (35, 'SUMA');
+
+SELECT * FROM mytable;
+
+
+
+
+
+//  second day  lab  class
+
+
+
+CREATE TABLE students (
+    roll INT,
+    Student_Name VARCHAR(30)
+);
+
+
+INSERT INTO students (roll, Student_Name) VALUES
+(17, 'shofikul'),
+(55, 'abcd'),
+(56, 'defg'),
+(67, 'qwerty');
+
+
+
+UPDATE students
+SET Student_Name = 'bangladesh'
+WHERE roll = 67;
+
+
+ALTER TABLE students ADD present VARCHAR(5);
+
+
+SELECT * FROM students;
+
+
+ALTER TABLE students DROP COLUMN present;
+
+ALTER TABLE students ADD present VARCHAR(5);
+
+
+SELECT * FROM students;
+
+
+ALTER TABLE students DROP COLUMN present;
+
+
+ALTER TABLE students RENAME COLUMN Student_Name TO name;
+
+
+
+
+SELECT * FROM students WHERE roll = 56;
+
+
+UPDATE students
+SET present = 'yes'
+WHERE roll = 56;
+
+
+SELECT * FROM students;
+
+
+
+
+
+
+
+
+// third day lab  class
+
+CREATE TABLE Employe_Table(
+  ID INT (3) primary key ,
+  Name VARCHAR(30),
+  salary int(10)
+);
+
+
+INSERT Employe_Table (Id, Name, salary) VALUES
+(17, 'shofikul' ,100000),
+(35, 'shamil', 100000),
+(30, 'Sakib ' ,100000),
+(20, 'shahin',100000);
+
+
+SELECT * FROM Employe_Table ;
+
+
+
+//adding alter table
+
+CREATE TABLE Employe_Table(
+  ID INT (3) primary key ,
+  Name VARCHAR(30),
+  salary int(10)
+);
+
+
+INSERT Employe_Table (Id, Name, salary) VALUES
+(17, 'shofikul' ,100000),
+(35, 'shamil', 100000),
+(30, 'Sakib ' ,100000),
+(20, 'shahin',100000);
+
+
+SELECT * FROM Employe_Table ;
+
+
+  ALTER TABLE Employe_Table add nafis varchar (10);
+  SELECT * FROM Employe_Table ;
+
+
+
+
+  // joining    date
+  CREATE TABLE Employe_Table(
+  ID INT (3) primary key ,
+  Name VARCHAR(30),
+  salary int(10)
+);
+
+
+INSERT Employe_Table (Id, Name, salary) VALUES
+(17, 'shofikul' ,100000),
+(35, 'shamil', 100000),
+(30, 'Sakib ' ,100000),
+(20, 'shahin',100000);
+
+
+SELECT * FROM Employe_Table ;
+
+  ALTER TABLE Employe_Table add joining_date DATE ;
+  SELECT * FROM Employe_Table ;
+
+
+
+
+
+  //rename
+
+
+CREATE TABLE Employe_Table(
+  ID INT (3) primary key ,
+  Name VARCHAR(30),
+  salary int(10)
+);
+
+
+INSERT Employe_Table (Id, Name, salary) VALUES
+(17, 'shofikul' ,100000),
+(35, 'shamil', 100000),
+(30, 'Sakib ' ,100000),
+(20, 'shahin',100000);
+
+
+SELECT * FROM Employe_Table ;
+
+
+  ALTER TABLE Employe_Table  rename column Name to Employe_name ;
+
+  SELECT * FROM Employe_Table ;
+
+
+
+
+
+
+
+
+
+CREATE TABLE Employe_Table(
+  ID INT (3) primary key ,
+  Name VARCHAR(30),
+  salary int(10)
+);
+
+
+INSERT Employe_Table (Id, Name, salary) VALUES
+(17, 'shofikul' ,400000),
+(35, 'shamil', 300000),
+(30, 'Sakib ' ,200000),
+(20, 'shahin',100000);
+
+
+SELECT * FROM Employe_Table ;
+
+
+  ALTER TABLE Employe_Table add nafis varchar (10);
+  ALTER TABLE Employe_Table add joining_date DATE ;
+  SELECT * FROM Employe_Table ;
+
+
+  ALTER TABLE Employe_Table  rename column Name to Employe_name ;
+
+  SELECT * FROM Employe_Table ;
+
+
+  UPDATE Employe_Table SET nafis= 'yes' WHERE id in (17 ,20 ,30 ,35);
+  UPDATE Employe_Table SET joining_date= '2024-10-25' WHERE id in (17);
+
+  SELECT * FROM Employe_Table ;
+
+
+
+  SELECT * FROM Employe_Table order by salary desc ;
+
+
+
+
+
+  Output:
+
++----+----------+--------+
+| ID | Name     | salary |
++----+----------+--------+
+| 17 | shofikul | 400000 |
+| 20 | shahin   | 100000 |
+| 30 | Sakib    | 200000 |
+| 35 | shamil   | 300000 |
++----+----------+--------+
++----+----------+--------+-------+--------------+
+| ID | Name     | salary | nafis | joining_date |
++----+----------+--------+-------+--------------+
+| 17 | shofikul | 400000 | NULL  | NULL         |
+| 20 | shahin   | 100000 | NULL  | NULL         |
+| 30 | Sakib    | 200000 | NULL  | NULL         |
+| 35 | shamil   | 300000 | NULL  | NULL         |
++----+----------+--------+-------+--------------+
++----+--------------+--------+-------+--------------+
+| ID | Employe_name | salary | nafis | joining_date |
++----+--------------+--------+-------+--------------+
+| 17 | shofikul     | 400000 | NULL  | NULL         |
+| 20 | shahin       | 100000 | NULL  | NULL         |
+| 30 | Sakib        | 200000 | NULL  | NULL         |
+| 35 | shamil       | 300000 | NULL  | NULL         |
++----+--------------+--------+-------+--------------+
++----+--------------+--------+-------+--------------+
+| ID | Employe_name | salary | nafis | joining_date |
++----+--------------+--------+-------+--------------+
+| 17 | shofikul     | 400000 | yes   | 2024-10-25   |
+| 20 | shahin       | 100000 | yes   | NULL         |
+| 30 | Sakib        | 200000 | yes   | NULL         |
+| 35 | shamil       | 300000 | yes   | NULL         |
++----+--------------+--------+-------+--------------+
++----+--------------+--------+-------+--------------+
+| ID | Employe_name | salary | nafis | joining_date |
++----+--------------+--------+-------+--------------+
+| 17 | shofikul     | 400000 | yes   | 2024-10-25   |
+| 35 | shamil       | 300000 | yes   | NULL         |
+| 30 | Sakib        | 200000 | yes   | NULL         |
+| 20 | shahin       | 100000 | yes   | NULL         |
++----+--------------+--------+-------+--------------+
+
+
+
+
+
+// 20-10-24 tarikh 3 rd lab class  sir ja poraicen
+
+
+
+CREATE TABLE Employe_Table(
+  empid INT ,
+  Name VARCHAR(20) not null ,
+  salary double(6,2)
+);
+
+
+INSERT Employe_Table VALUES (0008, 'clark', 2454.34) ;
+INSERT Employe_Table VALUES (0125,  'dave', 4235.55) ;
+INSERT Employe_Table VALUES (0002,  'Ada',  4500.24) ;
+INSERT Employe_Table VALUES (0005, 'Ava',  2454.34) ;
+
+ ALTER TABLE Employe_Table add primary key (empid) ;
+SELECT * FROM Employe_Table ;
+
+ ALTER TABLE Employe_Table add joining_date DATE ;
+  SELECT * FROM Employe_Table ;
+
+
+UPDATE Employe_Table SET joining_date= '2024-10-25' WHERE empid-0002;
+
+ SELECT * FROM Employe_Table ;
+
+
+order by salary desc ;
+
+ SELECT * FROM Employe_Table ;
+
+
+
+
+
+
+
+
